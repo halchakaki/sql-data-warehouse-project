@@ -1,7 +1,9 @@
 # Data Warehouse and Analytics Project
 
 Welcome to the **Data Warehouse and Analytics Project** repository! 
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics. \n To start we created databse in pgAdmin4 and set up three schemas within the databse: 'bronze', 'silver', and 'gold'.
+This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+
+To start, we created database in pgAdmin4 (right click Databases -> Create -> Database -> name 'DataWarehouse') and set up three schemas within the database: 'bronze', 'silver', and 'gold'.
 
 ---
 
