@@ -1,5 +1,6 @@
 --BRONZE LAYER SCRIPT STILL IN PROGRESS--
 
+
 	---- 1. DROP + CREATE TABLES.
 	
 	-- Create cust_info table from crm source.
@@ -80,6 +81,7 @@ FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_crm/cu
 DELIMITER ','
 CSV HEADER;
 
+
 	-- Clear data from table.
 TRUNCATE TABLE bronze.crm_prd_info;
 
@@ -90,15 +92,69 @@ FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_crm/pr
 DELIMITER ','
 CSV HEADER;
 
+
 	-- Clear data from table.
 TRUNCATE TABLE bronze.crm_sales_info;
 
 	-- Load sales_info from CSV to bronze.crm_sales_info table.
 	-- if \copy gets permission errors, right click on crm_sales_info table on the left and import data - from file path. (Header = Yes, Delimiter = ',').
-\COPY bronze.crm_prd_info
+\COPY bronze.crm_sales_info
 FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_crm/sales_details.csv'
 DELIMITER ','
 CSV HEADER;
+
+
+	-- Clear data from table.
+TRUNCATE TABLE bronze.erp_loc_a101; 
+
+	-- Load lOC_A101 from CSV to bronze.erp_loc_a101 table.
+	-- if \copy gets permission errors, right click on erp_loc_a101 table on the left and import data - from file path. (Header = Yes, Delimiter = ',').
+\COPY bronze.erp_loc_a101
+FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_erp/LOC_A101.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+	-- Clear data from table.
+TRUNCATE TABLE bronze.erp_cust_az12;
+
+	-- Load prd_info from CSV to bronze.erp_cust_az12 table.
+	-- if \copy gets permission errors, right click on erp_cust_az12 table on the left and import data - from file path. (Header = Yes, Delimiter = ',').
+\COPY bronze.erp_cust_az12
+FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_erp/CUST_AZ12.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+	-- Clear data from table.
+TRUNCATE TABLE bronze.erp_px_cat_g1v2;
+
+	-- Load sales_info from CSV to bronze.erp_px_cat_g1v2 table.
+	-- if \copy gets permission errors, right click on erp_px_cat_g1v2 table on the left and import data - from file path. (Header = Yes, Delimiter = ',').
+\COPY bronze.erp_px_cat_g1v2
+FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_erp/PX_CAT_G1V2.csv'
+DELIMITER ','
+CSV HEADER;
+
+
+
+	---- 3. TEST QUERIES.
+
+
+
+
+
+
+-- Checking if all Rows imported
+SELECT * FROM bronze.crm_cust_info;
+SELECT * FROM bronze.crm_prd_info;
+SELECT * FROM bronze.crm_sales_info;
+SELECT * FROM bronze.erp_loc_a101;
+SELECT * FROM bronze.erp_cust_az12;
+SELECT * FROM bronze.erp_px_cat_g1v2;
+
+SELECT 1;
+
 
 
 
@@ -106,7 +162,6 @@ CSV HEADER;
 
 
 
-	---- 3. TEST QUERIES.
 
 
 
