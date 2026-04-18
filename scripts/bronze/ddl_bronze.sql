@@ -1,6 +1,6 @@
 --BRONZE LAYER SCRIPT STILL IN PROGRESS--
 
-
+ 
 	---- 1. DROP + CREATE TABLES.
 	
 	-- Create cust_info table from crm source.
