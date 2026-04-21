@@ -1,6 +1,17 @@
 --BRONZE LAYER SCRIPT STILL IN PROGRESS--
 
- 
+/*
+=============================================================================
+DDL Script: Create Bronze Tables & Load Data from CVS
+=============================================================================
+Script Purpose:
+	This script creates tables in the 'bronze' schema, dropping existing 
+	tables if they already exist.
+	Run this script to re-define the DDL structure of 'bronze Tables
+=============================================================================
+*/
+
+
 	---- 1. DROP + CREATE TABLES.
 	
 	-- Create cust_info table from crm source.
@@ -145,7 +156,12 @@ CSV HEADER;
 
 
 
--- Checking if all Rows imported
+/*
+=============================================================================
+	This is for Checking if all Rows  got imported, run individually.
+=============================================================================
+*/
+
 SELECT * FROM bronze.crm_cust_info;
 SELECT * FROM bronze.crm_prd_info;
 SELECT * FROM bronze.crm_sales_info;
