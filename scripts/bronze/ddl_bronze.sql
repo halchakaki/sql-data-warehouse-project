@@ -2,12 +2,12 @@
 
 /*
 =============================================================================
-DDL Script: Create Bronze Tables & Load Data from CVS
+DDL Script: Create Bronze Tables
 =============================================================================
 Script Purpose:
 	This script creates tables in the 'bronze' schema, dropping existing 
 	tables if they already exist.
-	Run this script to re-define the DDL structure of 'bronze Tables
+	Run this script to re-define the DDL structure of 'bronze' Tables
 =============================================================================
 */
 
@@ -79,6 +79,19 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
 
 
 
+/*
+=============================================================================
+DDL Script: Load Data From CSV Files
+=============================================================================
+Script Purpose:
+	This script loads data into the 'bronze' schema from external CSV files.
+	It clears existing data from the tables (truncate), then load data.
+	Run below script to clear and load fresh data from CSV files.
+
+	\copy gave me permisison errors. In this case we truncate 'bronze' tables
+	 then we manually import data from file path.
+=============================================================================
+*/
 
 	---- 2. LOAD DATA.
 	
