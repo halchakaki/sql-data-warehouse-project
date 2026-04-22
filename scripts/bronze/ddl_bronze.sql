@@ -21,7 +21,7 @@ CREATE TABLE bronze.crm_cust_info (
 	cst_key VARCHAR(50),
 	cst_firstname VARCHAR(50),
 	cst_lastname VARCHAR(50),
-	cst_material_status VARCHAR(50),
+	cst_marital_status VARCHAR(50),
 	cst_gndr VARCHAR(50),
 	cst_create_date DATE
 );
@@ -75,7 +75,6 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
 	subcat VARCHAR(50),
 	maintenance VARCHAR(50)
 );
-
 
 
 
@@ -164,25 +163,6 @@ CSV HEADER;
 
 	---- 3. TEST QUERIES.
 
-
-
-
-
-
-/*
-=============================================================================
-	This is for Checking if all Rows  got imported, run individually.
-=============================================================================
-*/
-
-SELECT * FROM bronze.crm_cust_info;
-SELECT * FROM bronze.crm_prd_info;
-SELECT * FROM bronze.crm_sales_info;
-SELECT * FROM bronze.erp_loc_a101;
-SELECT * FROM bronze.erp_cust_az12;
-SELECT * FROM bronze.erp_px_cat_g1v2;
-
-SELECT 1;
 
 
 
