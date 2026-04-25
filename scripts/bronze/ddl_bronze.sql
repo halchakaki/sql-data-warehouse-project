@@ -25,7 +25,7 @@ CREATE TABLE bronze.crm_cust_info (
 	cst_gndr VARCHAR(50),
 	cst_create_date DATE
 );
-
+----------------------------------------------------
 	-- Create prd_info table from crm source.
 DROP TABLE IF EXISTS bronze.crm_prd_info;
 CREATE TABLE bronze.crm_prd_info (
@@ -37,7 +37,7 @@ CREATE TABLE bronze.crm_prd_info (
 	prd_start_dt TIMESTAMP,
 	prd_end_dt TIMESTAMP
 );
-
+----------------------------------------------------
 	-- Create sales_details table from crm source.
 DROP TABLE IF EXISTS bronze.crm_sales_info;
 CREATE TABLE bronze.crm_sales_info (
@@ -51,14 +51,14 @@ CREATE TABLE bronze.crm_sales_info (
 	sls_quantity INT,
 	sls_price INT
 );
-
+----------------------------------------------------
 	-- Create LOC_A101 table from erp source.
 DROP TABLE IF EXISTS bronze.erp_loc_a101;
 CREATE TABLE bronze.erp_loc_a101 (
 	cid VARCHAR(50),
 	cntry VARCHAR(50)
 );
-
+----------------------------------------------------
 	-- Create CUST_AZ12 table from erp source.
 DROP TABLE IF EXISTS bronze.erp_cust_az12;
 CREATE TABLE bronze.erp_cust_az12 (
@@ -66,7 +66,7 @@ CREATE TABLE bronze.erp_cust_az12 (
 	bdate DATE,
 	gen VARCHAR(50)
 );
-
+----------------------------------------------------
 	-- Create PX_CAT_G1V2 table from erp source.
 DROP TABLE IF EXISTS bronze.erp_px_cat_g1v2;
 CREATE TABLE bronze.erp_px_cat_g1v2 (
@@ -75,22 +75,12 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
 	subcat VARCHAR(50),
 	maintenance VARCHAR(50)
 );
+----------------------------------------------------
 
 
+--==================================================================================--
 
-/*
-=============================================================================
-DDL Script: Load Data From CSV Files
-=============================================================================
-Script Purpose:
-	This script loads data into the 'bronze' schema from external CSV files.
-	It clears existing data from the tables (truncate), then load data.
-	Run below script to clear and load fresh data from CSV files.
 
-	\copy gave me permisison errors. In this case we truncate 'bronze' tables
-	 then we manually import data from file path.
-=============================================================================
-*/
 
 	---- 2. LOAD DATA.
 	
@@ -103,7 +93,7 @@ TRUNCATE TABLE bronze.crm_cust_info;
 FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_crm/cust_info.csv'
 DELIMITER ','
 CSV HEADER;
-
+----------------------------------------------------
 
 	-- Clear data from table.
 TRUNCATE TABLE bronze.crm_prd_info;
@@ -114,7 +104,7 @@ TRUNCATE TABLE bronze.crm_prd_info;
 FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_crm/prd_info.csv'
 DELIMITER ','
 CSV HEADER;
-
+----------------------------------------------------
 
 	-- Clear data from table.
 TRUNCATE TABLE bronze.crm_sales_info;
@@ -125,7 +115,7 @@ TRUNCATE TABLE bronze.crm_sales_info;
 FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_crm/sales_details.csv'
 DELIMITER ','
 CSV HEADER;
-
+----------------------------------------------------
 
 	-- Clear data from table.
 TRUNCATE TABLE bronze.erp_loc_a101; 
@@ -136,7 +126,7 @@ TRUNCATE TABLE bronze.erp_loc_a101;
 FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_erp/LOC_A101.csv'
 DELIMITER ','
 CSV HEADER;
-
+----------------------------------------------------
 
 	-- Clear data from table.
 TRUNCATE TABLE bronze.erp_cust_az12;
@@ -147,7 +137,7 @@ TRUNCATE TABLE bronze.erp_cust_az12;
 FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_erp/CUST_AZ12.csv'
 DELIMITER ','
 CSV HEADER;
-
+----------------------------------------------------
 
 	-- Clear data from table.
 TRUNCATE TABLE bronze.erp_px_cat_g1v2;
@@ -158,19 +148,25 @@ TRUNCATE TABLE bronze.erp_px_cat_g1v2;
 FROM 'C:/Users/halch/Downloads/sql-data-warehouse-project/datasets/source_erp/PX_CAT_G1V2.csv'
 DELIMITER ','
 CSV HEADER;
+----------------------------------------------------
+
+
+--==================================================================================--
 
 
 
-	---- 3. TEST QUERIES.
+	---- 3. TEST TABLES & DATA.
 
 
+SELECT * FROM bronze.crm_cust_info;
 
+SELECT * FROM bronze.crm_prd_info;
 
+SELECT * FROM bronze.crm_sales_info;
 
---- INCOMPLETE. STILL IN PROGRESS ---
+SELECT * FROM bronze.erp_loc_a101;
 
+SELECT * FROM bronze.erp_cust_az12;
 
-
-
-
+SELECT * FROM bronze.erp_px_cat_g1v2;
 
