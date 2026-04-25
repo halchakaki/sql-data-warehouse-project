@@ -1,6 +1,15 @@
+/*
+--==================================================================================--
+DDL Script: Create Silver Tables
+--==================================================================================--
+Script Purpose:
+	This script creates tables in the 'sivler' schema, dropping existing tables if
+	they already exist.
+	Run this script to re-deifne the DDL structure of 'bronze' tables.
+*/
 
 
----- 1. DROP + CREATE TABLES & ADD create_date COLUMN ----
+	---- 1. DROP + CREATE TABLES & ADD create_date COLUMN ----
 	
 -------------------------------------------------------	
 	-- Create cust_info table from crm source.
@@ -263,13 +272,4 @@ SELECT 'Silver_Layer Script Completed Successfully';
 
 
 --==========================================================--
-
-
-
-	---- 3. TEST QUERIES.
-
-
-
-
-
 
