@@ -6,6 +6,7 @@ Script Purpose:
 	This script creates tables in the 'sivler' schema, dropping existing tables if
 	they already exist.
 	Run this script to re-deifne the DDL structure of 'bronze' tables.
+	See below for script to Truncate and Insert transformed/cleansed data.
 */
 
 
@@ -92,6 +93,17 @@ CREATE TABLE silver.erp_px_cat_g1v2 (
 
 --==================================================================================--
 
+/*
+--==================================================================================--
+DDL Script: Load Silver Layer (Bronze -> Silver)
+--==================================================================================--
+Script Purpose:
+	This script performs the ETL (Extract, Transform, Load) process to populate
+	the 'silver' schema tables from the 'bronze' schema.
+Action Performed:
+	-Truncate Silver Tables.
+	-Insert transformed and cleansed data from Bronze into Silver tables.
+*/
 
 
 	---- 2. TRANSFORM DATA ----
