@@ -280,7 +280,7 @@ SELECT  -- Data looks clean
 FROM bronze.erp_px_cat_g1v2;   
 -------------------------------------------------------
 
-SELECT 'Silver_Layer Script Completed Successfully';
+SELECT 'Silver_Layer Transformed/Cleansed Data Inserted Successfully';
 
 
 --==========================================================--
