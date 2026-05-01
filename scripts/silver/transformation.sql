@@ -1,7 +1,7 @@
 
 /* 
 THIS SCRIPT IS TO SHOW THE TRANSFORMATION FOR EACH TABLE AND NOT TO RUN AS A WHOLE
-Please see 'ddl_silver' file for full script to run 
+Please see 'ddl_silver.sql' for full script to run 
 */
 
 
